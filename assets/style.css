@@ -5,6 +5,7 @@
     --second-base: grey;
     --third-base: black;
 }
+
 .app-title {
     font-size: 3rem;
     background-color: var(--dark);
@@ -34,11 +35,26 @@
     box-shadow: 2px 2px var(--light);
 }
 
+header {
+    text-align: center;
+}
+
 .hero {
     background-color: var(--dark);
 }
 
 p {
     color: var(--base);
-    align-content: center;
+    font-weight: bolder;
+}
+
+.weather-container {
+    background-color: var(--base);
+    box-shadow: 1px 1px var(--dark);
+    color: var(--dark);
+}
+
+.submit {
+    color: var(--dark);
+    font-weight: bolder;
 }

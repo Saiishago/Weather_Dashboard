@@ -10,8 +10,7 @@
          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
          crossorigin="anonymous"
        />
-       <link href="https://fonts.google.com/specimen/Rubik+Wet+Paint" rel="stylesheet"/>
-       <!--link href="https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={2f2015ffdd079862a9c1e8ebc7c19859}" rel="stylesheet"-->
+       <ink href="https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={2f2015ffdd079862a9c1e8ebc7c19859}" rel="stylesheet">
        <link rel="stylesheet" href="./assets/style.css" />
        <title>My Weather Tea</title>
     </head>
@@ -29,18 +28,17 @@
                         <h3 class="card-header">Search City</h3>
                         <section class="inputs">
                            <input type="text" placeholder="City" id="cityinput">
-                           <input type="submit" value="Submit" id="add">
-                           <button placeholder="submit" id="add"></button>
+                           <button placeholder="submit" id="add"><input class="submit" type="submit" value="Submit" id="add"></button>
 
-                           <div class="card">
+                           <div class="weather-card">
                                <div id="weather-buttons" class="card-body">
-                                <button data-weather="hoodriver" class="btn">Hood River</button>
-                                <button data-weather="gresham" class="btn">Gresham</button>
-                                <button data-weather="portland" class="btn">Portland</button>
-                                <button data-weather="brits" class="btn">Brits</button>
-                                <button data-weather="johannesburg" class="btn">Johannesburg</button>
-                                <button data-weather="newyork" class="btn">New York</button>
-                                <button data-weather="miami" class="btn">Miami</button>
+                                <button weather-data="hoodriver" class="btn">Hood River</button>
+                                <button weather-data="gresham" class="btn">Gresham</button>
+                                <button weather-data="portland" class="btn">Portland</button>
+                                <button weather-data="brits" class="btn">Brits</button>
+                                <button weather-data="johannesburg" class="btn">Johannesburg</button>
+                                <button weather-data="newyork" class="btn">New York</button>
+                                <button weather-data="miami" class="btn">Miami</button>
                                </div>
                            </div>
                         </section>
