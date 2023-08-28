@@ -3,10 +3,37 @@
     <head>
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-       <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-       <link href="https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={7953da130b251ddfcba0dbf8f9be15e3}" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+       <!--link href="https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={2f2015ffdd079862a9c1e8ebc7c19859}" rel="stylesheet"-->
        <link rel="stylesheet" href="./assets/style.css" />
        <title>My Weather Tea</title>
     </head>
+
+    <body class="flex-column min-100-vh">
+        <header class="hero">
+            <h1 class="app-title">My Weather<i class="fa fa-coffee" aria-hidden="true"></i></h1>
+            <p>So...what am I wearing today?</p>
+        </header>
+
+        <div class="weather-container">
+            <section class="main">
+                <section class="inputs">
+                   <input type="text" placeholder="City" id="cityinput">
+                   <input type="submit" value="Submit" id="add">
+                   <button placeholder="submit" id="add"></button>
+                </section>
+
+               <section class="display">
+                <div class="wrapper">
+                  <h2 id="cityoutput"></h2>
+                  <p id="description"></p>
+                  <p id="temp"></p>
+                  <p id="wind"></p>
+                </div>
+              </section>
+            </section>
+        </div>
+
+        <script src="https://kit.fontawesome.com/7886d444c5.js" crossorigin="anonymous"></script>
+    </body>
 </html>
