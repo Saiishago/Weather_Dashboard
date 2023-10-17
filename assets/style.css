@@ -1,3 +1,7 @@
+
+* {
+    box-sizing: border-box;
+}
 :root {
     --light : powderblue;
     --dark : navy;
@@ -5,56 +9,61 @@
     --second-base: grey;
     --third-base: black;
 }
-
-.app-title {
-    font-size: 3rem;
-    background-color: var(--dark);
-    color: var(--light);
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.row {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: stretch; 
 }
 
-.btn {
-    font-size: 1.3rem;
-    text-decoration:none;
-    padding: 6px 5px;
-    width: 100%;
-    display: block;
-    margin: 5px 0;
-    border-radius: .2rem;
-    color: var(--dark);
-    border: none;
-    outline: none;
-    background-color:var(--light);
-    box-shadow: 3px 3px var(--dark);
-    transform: translate(-1px, -1px);
-}
+.sidenav {
+    padding-top: 15px;
+    position: fixed;
+    height: 100%;
+    width: 200px;
 
-.btn:hover {
-    color: var(--base);
-    background-color: var(--dark);
-    transform: translate(0, 0);
-    box-shadow: 2px 2px var(--light);
 }
 
 header {
     text-align: center;
+    font-size: 20px;
+    background-color: var(--dark);
+    color: var(--light);
 }
-
-.hero {
+section {
+    text-align: center;
+    color: var(--light);
+}
+h2,
+h3 {
+  font-weight: 700;
+  margin: 0;
+  color: var(--dark);
+  line-height: 1.25;
+}
+p {
+    font-size: 10px;
+    color: var(--dark);
+}
+h4, h5 {
+    font-weight: lighter;
+    font-size: 10px;
+    color: var(--light)
+}
+footer {
     background-color: var(--dark);
 }
-
-p {
-    color: var(--base);
-    font-weight: bolder;
+.btn {
+    padding-top:5px ;
+    font-size: 15px;
+    color: var(--dark);
 }
-
-.weather-container {
-    background-color: var(--base);
-    box-shadow: 1px 1px var(--dark);
+.button {
+    padding-top:5px ;
+    font-size: 15px;
     color: var(--dark);
 }
 
-.submit {
-    color: var(--dark);
-    font-weight: bolder;
-}

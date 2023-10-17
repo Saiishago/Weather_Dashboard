@@ -10,7 +10,7 @@ https://www.javascripttutorial.ne
 
 
 
-Links;
+## Links
 
 Github Link:
 
@@ -18,11 +18,9 @@ Github Link:
 Deployed Link:
 
 
-Screenshots:
 
 
-
-Code;
+## Code
 
 index.html:
 
@@ -34,4 +32,4 @@ script.js:
 
 
 
-Screenshots;
+## Screenshots

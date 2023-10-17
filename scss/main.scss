@@ -1,0 +1,25 @@
+$light : powderblue;
+$dark : navy;
+$base : ghostwhite;
+$second-base: grey;
+$third-base: black;
+$font-weight: (
+    'regular': 200,
+    'medium' : 300,
+    'bold' : 500,
+);
+$font-size: (
+    'small': 1.3rem,
+    'regular': 2.3rem,
+    'large': 3rem,
+);
+
+
+body {
+    background: $base;
+    font-weight: map-get($font-weight, bold);
+}
+
+.app-title {
+    font-size: map-get($font-size, large );
+}
