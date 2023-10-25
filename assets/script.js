@@ -1,14 +1,15 @@
 var apiKey = '2f2015ffdd079862a9c1e8ebc7c19859';
+
 var cities=[];
-var searchInputEl = document.getElementById("city");
-var searchButtonEl = document.getElementById("submit");
+var searchInputEl = document.getElementById("search-input");
+var searchButtonEl = document.getElementById("search-button");
 var cityNameEl = document.getElementById("cityname");
-var recentSearchesEl = document.getElementById("city-history");
+var cityHistoryEl = document.getElementById("city-history");
 var weatherDisplayEl = document.getElementById("displayweather");
-var weatherIconEl = document.getElementById("recent-searches");
+var weatherIconEl = document.getElementById("weather-icon");
 
 var indexs = [0,7,15,23,31,39];
-var recentSearches=[];
+var city_history=[];
 var temperatures=[6];
 var humids=[6];
 var winds=[6];
@@ -25,38 +26,38 @@ var weatherIconEl = [
 
 var cityDayEl = [
     document.getElementById("cityday"),
-    document.getElementById("citydayT"),
-    document.getElementById("citydayTDA"),
-    document.getElementById("citydayTDT"),
-    document.getElementById("citydayTFD"),
-    document.getElementById("citydayFDL"),
+    document.getElementById("citydayOne"),
+    document.getElementById("citydayTwo"),
+    document.getElementById("citydayThree"),
+    document.getElementById("citydayFour"),
+    document.getElementById("citydayFive"),
 ];
 
 var tempEl = [
-    document.getElementById("tempToday"), 
-    document.getElementById("tempTomorrow"),
-    document.getElementById("tempTDAtomorrow"),
-    document.getElementById("tempTDTfollows"),
-    document.getElementById("tempTFday"),
-    document.getElementById("tempFDlater"),
+    document.getElementById("temp"), 
+    document.getElementById("tempone"),
+    document.getElementById("temptwo"),
+    document.getElementById("tempthree"),
+    document.getElementById("tempfour"),
+    document.getElementById("tempfive"),
 ];
 
 var windEl = [
-    document.getElementById("windToday"), 
-    document.getElementById("windTomorrow"),
-    document.getElementById("windTDAtomorrow"),
-    document.getElementById("windTDTfollows"),
-    document.getElementById("windTFday"),
-    document.getElementById("windFDlater")
+    document.getElementById("wind"), 
+    document.getElementById("windone"),
+    document.getElementById("windtwo"),
+    document.getElementById("windthree"),
+    document.getElementById("windfour"),
+    document.getElementById("windfive")
 ];
 
 var humidityEl = [
-    document.getElementById("humidityToday"), 
-    document.getElementById("humidityTomorrow"),
-    document.getElementById("humidityTDAtomorrow"),
-    document.getElementById("humidityTDTfollows"),
-    document.getElementById("humidityTFday"),
-    document.getElementById("humidityFDlater")
+    document.getElementById("humidity"), 
+    document.getElementById("humidityone"),
+    document.getElementById("humiditytwo"),
+    document.getElementById("humiditythree"),
+    document.getElementById("humidityfour"),
+    document.getElementById("humidityfive")
 ];
 
 ////
@@ -141,7 +142,7 @@ function getWeather(lat, lon){
 function displayWeather(data) {
   console.log(data);
   var city = data.city.name;
-  recentSearchesEl.textcontext= "";
+  cityHistoryEl.textcontext= "";
   
   for (let i=0;i<6;i++){
     temperatures[i] = data.list[indexs[i]].main.temp;
@@ -168,32 +169,32 @@ searchButtonEl.addEventListener("click", function () {
   var searchInput = searchInputEl.value; 
   getLocation(searchInput);
   
-  if (recentSearches.length<3){
-  console.log(recentSearches);
-  recentSearches.unshift(searchInput);
-  console.log(recentSearches);
+  if (city_history.length<3){
+  console.log(city_history);
+  city_history.unshift(searchInput);
+  console.log(city_history);
   } else{
-    recentSearches.length= recentSearches.length-1;
-    recentSearches.unshift(searchInput);
+    city_history.length= city_history.length-1;
+    city_history.unshift(searchInput);
   }
-  printRecentSearches();
-  updateRecentSearches(recentSearches);
+  printCityHistory();
+  updateCityHistory(city_history);
 });
 
 
-var recentSearches = JSON.parse(localStorage.getItem("recent-searches")) || [];
+var city_history = JSON.parse(localStorage.getItem("city_history")) || [];
 
-function printRecentSearches() {
-  recentSearchesEl.innerHTML = "";
-  console.log(recentSearchesEl);
-  for (let i = 0; i < recentSearches.length; i++) {
+function printCityHistory() {
+  cityHistoryEl.innerHTML = "";
+  console.log(cityHistoryEl);
+  for (let i = 0; i < city_history.length; i++) {
     const list = document.createElement("li");
-    list.setAttribute("id",recentSearches[i]);
-    recentSearchesEl.appendChild(list);
-    const container = document.getElementById(recentSearches[i]);
+    list.setAttribute("id",city_history[i]);
+    cityHistoryEl.appendChild(list);
+    const container = document.getElementById(city_history[i]);
     const button = document.createElement("btn");
-    button.setAttribute("value",recentSearches[i]);
-    button.textContent = recentSearches[i];
+    button.setAttribute("value",city_history[i]);
+    button.textContent = city_history[i];
     container.appendChild(button);
     button.addEventListener("click", function(event){
     const city = event.target.value;
@@ -203,9 +204,9 @@ function printRecentSearches() {
   }
 }
 
-function updaterecentSearches(searchInput) {
-  localStorage.setItem("recent-searches", JSON.stringify(searchInput));
-  printRecentSearches();
+function updateCityHistory(searchInput) {
+  localStorage.setItem("city_history", JSON.stringify(searchInput));
+  printCityHistory();
 }
 
-printRecentSearches();
+printCityHistory();

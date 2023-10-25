@@ -12,7 +12,7 @@ https://www.javascripttutorial.ne
 
 ## Links
 
-Github Link:
+Github Link: https://github.com/Saiishago/Weather_Dashboard
 
 
 Deployed Link:
@@ -22,14 +22,15 @@ Deployed Link:
 
 ## Code
 
-index.html:
-
+index.html: 
+Wrote code in sections so it was clear and reader friendly. Linked it to both the css and js files for functionality.
 
 style.css:
-
+This file contains all the styling of the website so it is pleasing to the viewers eye.
 
 script.js:
-
+This file contains the content to ensure the weather data displays and responses accordingly, it also contains the unique api needed to call the weather data.
 
 
 ## Screenshots
+![WeatherData](<Screen Shot 2023-10-25 at 11.59.02 AM (2).png>)
