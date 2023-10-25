@@ -2,158 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/style.css"/>
-    <title>Weather Tea</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Thee Weather Dashboard</title>
 </head>
 <body>
-  <!--header-->
-  <header class="hero">
-    <h1>Weather Dashboard</h1>
-  </header>
-
-
-  <!--sidebar-->
-  <div class="sidenav">
-    <div class="card">
-      <h2>Search for a City</h2>
-      <form id="city-form" class="card-body">
-        <input name="city" id="city" type="text" autofocus="true" class="form-input"/>
-        <button type="submit" class="btn">Search</button>
-      </form>
+    <header id="header" class="container"><h1>Weather Tea</h1></header>
+    <input type="text" id="search-input">
+    <button id="search-button">Search</button>
+    <div id="search-history">
+        <h3>Search History:</h3>
+        <ul id="city-history">
+        </ul>
     </div>
-    <div class="card">
-      <h3>Recent Searches</h3>
-      <ul id="recent-searches"></ul>
-    </div>
-  </div>
-
-  <!--weather business-->
-  <main class="container">
-    <section class="row justify-center">
-    <!--today-->
-     <div class="card-column" id="weather-forecast">
-      <figure class="card-block">
-       <h2 class="header-b">Displaying <span id="weather-display"></span></h2>
-       <aside class="forecast-square">
-         <p id="city-name"></p>
-         <p id="city-day"></p>
-         <a href="https://openweathermap.org/img/wn/13d@2x.png" target="">
-           <img id="weather-icon" src="https://openweathermap.org/img/wn/13d@2x.png" alt="Data showing current weather of a city."></a>
-         <p id="temptoday">Temperature</p>
-         <p id="windtoday">Wind Speed</p>
-         <p id="humiditytoday">Humidity</p>
-       </aside>
-      </figure>
-     </div>
-    </section>
-    <!--tomorrow-->
-    <section class="row">
-      <div class="card-column">
-        <figure class="card-block">
-          <h3 class="header-b">Tomorrow</h3>
-          <aside class="forecast-square">
-            <p id="city-dayT"></p>
-            <a href="https://openweathermap.org/img/wn/13d@2x.png" target="">
-              <img id="weather-icon" src="https://openweathermap.org/img/wn/13d@2x.png" alt="Data showing current weather of a city."></a>
-            <p id="temptomorrow">Temperature</p>
-            <p id="windtomorrow">Wind Speed</p>
-            <p id="humiditytomorrow">Humidity</p>
-          </aside>
-        </figure>
-      </div>
-    
-
-    <!--the day after tomorrow-->
-      <div class="card-column">
-        <figure class="card-block">
-          <h3 class="header-b">The Day after Tomorrow</h3>
-          <aside class="forecast-square">
-            <p id="city-dayTDA"></p>
-            <a href="https://openweathermap.org/img/wn/13d@2x.png" target="">
-              <img id="weather-icon" src="https://openweathermap.org/img/wn/13d@2x.png" alt="Data showing current weather of a city."></a>
-            <p id="tempTDAtomorrow">Temperature</p>
-            <p id="windTDAtomorrow">Wind Speed</p>
-            <p id="humidityTDAtomorrow">Humidity</p>
-          </aside>
-        </figure>
-      </div>
-
-    <!--the day that follows-->
-    <div class="card-column">
-      <figure class="card-block">
-        <h3 class="header-b">The Day that Follows</h3>
-        <aside class="forecast-square">
-          <p id="city-dayTDT"></p>
-          <a href="https://openweathermap.org/img/wn/13d@2x.png" target="">
-            <img id="weather-icon" src="https://openweathermap.org/img/wn/13d@2x.png" alt="Data showing current weather of a city."></a>
-          <p id="tempTDTfollows">Temperature</p>
-          <p id="windTDTfollows">Wind Speed</p>
-          <p id="humidityTDTfollows">Humidity</p>
-        </aside>
-      </figure>
-    </div>
-
-    <!--the fourth day-->
-    <div class="card-column">
-      <figure class="card-block">
-        <h3 class="header-b">The Fourth Day</h3>
-        <aside class="forecast-square">
-          <p id="city-dayTFD"></p>
-          <a href="https://openweathermap.org/img/wn/13d@2x.png" target="">
-            <img id="weather-icon" src="https://openweathermap.org/img/wn/13d@2x.png" alt="Data showing current weather of a city."></a>
-          <p id="tempTFday">Temperature</p>
-          <p id="windTFday">Wind Speed</p>
-          <p id="humidityTFday">Humidity</p>
-        </aside>
-      </figure>
-    </div>
-
-    <!--five days later-->
-    <div class="card-column">
-      <figure class="card-block">
-        <h3 class="header-b">Five Days Later</h3>
-        <aside class="forecast-square">
-          <p id="city-dayFDL"></p>
-          <a href="https://openweathermap.org/img/wn/13d@2x.png" target="">
-            <img id="weather-icon" src="https://openweathermap.org/img/wn/13d@2x.png" alt="Data showing current weather of a city."></a>
-          <p id="tempFDlater">Temperature</p>
-          <p id="windFDlater">Wind Speed</p>
-          <p id="humidityFDlater">Humidity</p>
-        </aside>
-      </figure>
-    </div>
-  </section>
-
-
-    <!--<section class="location">
-      <div class="date"></div>
-      <div class="city"></div>
-      <div class="current">
-        <div class="temp">
-          <span></span>
-        </div>
-        <div class="weather"></div>
-      </div>
-    </section>-->
-  
-    
-
-    <!--footer area-->
-      <footer class="card-footer text-center">
-        <h4>Weather Tea, designed by Salome Mphago. So what are you wearing today?</h4>
-        <h5>&copy; 2023 All rights reserved.</h5>
+     <main id="weather-box" class="container" >
+        <section class="row justify-center">
+            <!-- Today/Now -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Current Weather</h2>
+                    <aside class="weather-block">
+                        <p id="cityday"></p>
+                        <p id="cityname"></p>
+                      <a href="https://openweathermap.org/img/wn/10d@2x.png" target=""><img id="weather-icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Current weather data"></a>
+                      <p id="temp">Temperature:</p>
+                      <p id="wind">Wind:</p>
+                      <p id="humidity">Humidity:</p>
+                    </aside>
+                </figure>
+            </article>
+        </section>
+            <!-- weather data day by day -->
+            <!-- One -->
+        <section class="row">
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Day One</h2>
+                    <aside class="weather-block">
+                        <p id="citydayOne"></p>
+                    <a href="https://openweathermap.org/img/wn/13d@2x.png" target=""><img id="weather-iconI" src="https://openweathermap.org/img/wn/13d@2x.png" alt="First day of weather data"></a>
+                      <p id="tempone">Temperature:</p>
+                      <p id="windone">Wind:</p>
+                      <p id="humidityone">Humidity:</p>
+                    </aside>
+                </figure>
+            </article>
+            <!-- Two -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Day Two</h2>
+                    <aside class="weather-block">
+                        <p id="citydayTwo"></p>
+                        <a href="https://openweathermap.org/img/wn/10d@2x.png" target=""><img id="weather-iconII" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Second day of weather data"></a>
+                        <p id="temptwo">Temperature:</p>
+                        <p id="windtwo">Wind:</p>
+                        <p id="humiditytwo">Humidity:</p>
+                    </aside>
+                </figure>
+            </article>
+            <!-- Three -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Day Three</h2>
+                    <aside class="weather-block">
+                        <p id="citydayThree"></p>
+                        <a href="https://openweathermap.org/img/wn/13d@2x.png" target=""><img id="weather-iconIII" src="https://openweathermap.org/img/wn/13d@2x.png" alt="Thrid day of weather data"></a>
+                        <p id="tempthree">Temperature:</p>
+                        <p id="windthree">Wind:</p>
+                        <p id="humiditythree">Humidity:</p>
+                    </aside>
+                </figure>
+            </article>
+            <!-- Four -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Day Four</h2>
+                    <aside class="weather-block">
+                        <p id="citydayFour"></p>
+                        <a href="https://openweathermap.org/img/wn/10d@2x.png" target=""><img id="weather-iconIV" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Fourth day of weather data"></a>
+                        <p id="tempfour">Temperature:</p>
+                        <p id="windfour">Wind:</p>
+                        <p id="humidityfour">Humidity:</p>
+                    </aside>
+                </figure>
+            </article>
+            <!-- Five -->
+            <article class="card-column">
+                <figure class="card-block">
+                    <h2 class="header-block">Day Five</h2>
+                    <aside class="weather-block">
+                        <p id="citydayFive"></p>
+                        <a href="https://openweathermap.org/img/wn/13d@2x.png" target=""><img id="weather-iconV" src="https://openweathermap.org/img/wn/13d@2x.png" alt="Fifth day of weather data"></a>
+                        <p id="tempfive">Temperature:</p>
+                        <p id="windfive">Wind:</p>
+                        <p id="humidityfive">Humidity:</p>
+                    </aside>
+                </figure>
+            </article>
+        </section>
+<!-- the end -->
+    <script src="./assets/script.js"></script>
+    <footer>
+        <section class="footer" id="footer">
+          <section class="form-footer">
+            <h4>Designed by Salome Mphago. &copy; 2023 All rights reserved.</h4>
+            </p>
+         </section>
       </footer>
-  </main>
-  
-  <script src="./assets/script.js"></script>
 </body>
 </html>
-<!--
-  <div id="openweathermap-widget-12"></div>
-<script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  
-  window.myWidgetParam.push({id: 12,cityid: '5746545',appid: '2f2015ffdd079862a9c1e8ebc7c19859',units: 'metric',containerid: 'openweathermap-widget-12',  });  
-  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.
-  src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
-  var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
--->
