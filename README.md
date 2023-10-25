@@ -15,7 +15,7 @@ https://www.javascripttutorial.ne
 Github Link: https://github.com/Saiishago/Weather_Dashboard
 
 
-Deployed Link:
+Deployed Link: https://saiishago.github.io/Weather_Dashboard/
 
 
 
